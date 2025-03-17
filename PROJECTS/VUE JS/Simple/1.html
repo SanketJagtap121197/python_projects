@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Basics</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+        
+        <!-- v-bind example -->
+        <img v-bind:src="imageUrl" width="200">
+
+        <!-- v-model example -->
+        <input v-model="name" placeholder="Enter your name">
+        <p>Hello, {{ name }}!</p>
+
+        <!-- v-on event handling example -->
+        <button @click="increaseCount">Click Me</button>
+        <p>Count: {{ count }}</p>
+
+        <!-- v-for example -->
+        <ul>
+            <li v-for="fruit in fruits">{{ fruit }}</li>
+        </ul>
+
+        <!-- v-if example -->
+        <button @click="toggle">Toggle Message</button>
+        <p v-if="showMessage">Hello, Vue is awesome!</p>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    message: "Hello Vue.js!",
+                    imageUrl: "https://via.placeholder.com/200",
+                    name: "",
+                    count: 0,
+                    fruits: ["Apple", "Banana", "Cherry"],
+                    showMessage: true
+                };
+            },
+            methods: {
+                increaseCount() {
+                    this.count++;
+                },
+                toggle() {
+                    this.showMessage = !this.showMessage;
+                }
+            }
+        }).mount("#app");
+    </script>
+</body>
+</html>

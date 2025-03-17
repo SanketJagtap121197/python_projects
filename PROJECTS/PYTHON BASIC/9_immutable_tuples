@@ -1,0 +1,5 @@
+# Creating a tuple
+colors = ("Red", "Green", "Blue")
+
+# Accessing an element
+print(colors[1])  # Output: Green    from 0,1,2

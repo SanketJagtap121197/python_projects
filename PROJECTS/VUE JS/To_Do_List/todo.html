@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js To-Do List</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <style>
+        /* Basic styling for the app */
+        body { font-family: Arial, sans-serif; }
+        .container { width: 300px; margin: auto; text-align: center; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div id="app" class="container">
+        <h2>To-Do List</h2>
+        <!-- Input field to add a new task -->
+        <input v-model="newTask" type="text" placeholder="Add a task"> 
+        <button @click="addTask">Add</button> <!-- Button to add task -->
+        
+        <!-- Displaying the list of tasks -->
+        <ul>
+            <li v-for="(task, index) in tasks" :key="index">
+                {{ task }} <!-- Display task text -->
+                <button @click="removeTask(index)">Remove</button> <!-- Button to remove task -->
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // Regular JavaScript function to show an alert with a message
+        function showAlert(message) {
+            alert(message); // Display alert with given message
+        }
+    </script>
+
+    <script type="module">
+        // Create Vue app
+        const app = Vue.createApp({
+            data() {
+                // # Function that returns reactive data for the Vue component
+                return {
+                    tasks: [],  // # List to store tasks
+                    newTask: ""  // # Variable to store new task input
+                };
+            },
+            methods: {
+                addTask() {
+                    // # Check if input is not empty
+                    if (this.newTask.trim() !== "") {
+                        this.tasks.push(this.newTask);  // # Add task to the list
+                        this.newTask = "";  // # Clear input field
+                    }
+                },
+                removeTask(index) {
+                    this.tasks.splice(index, 1);  // # Remove task from list
+                }
+            }
+        });
+        
+        // Mount Vue app to the div with id "app"
+        app.mount('#app');
+    </script>
+</body>
+</html>
