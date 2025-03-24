@@ -1,0 +1,27 @@
+TYPES OF GRAPHS IN DSA PYTHON
+
+1. Directed and Undirected Graphs
+Directed Graph (Digraph): Edges have a direction (e.g., A → B).
+Undirected Graph: Edges have no direction (e.g., A - B).
+
+2. Weighted and Unweighted Graphs
+Weighted Graph: Edges have weights or costs.
+Unweighted Graph: All edges have the same weight or no weight.
+
+3. Cyclic and Acyclic Graphs
+Cyclic Graph: Contains at least one cycle.
+Acyclic Graph: Has no cycles (e.g., Directed Acyclic Graph, or DAG).
+
+4. Connected and Disconnected Graphs
+Connected Graph: Every node is reachable from any other node.
+Disconnected Graph: Some nodes are not connected.
+
+5. Bipartite Graph
+A graph whose nodes can be divided into two sets, with edges only between sets.
+
+6. Complete Graph
+A graph where every pair of nodes is connected by an edge.
+
+7. Sparse and Dense Graphs
+Sparse Graph: Few edges relative to nodes.
+Dense Graph: Many edges relative to nodes.
