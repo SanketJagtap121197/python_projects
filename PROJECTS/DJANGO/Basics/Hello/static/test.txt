@@ -1,0 +1,3 @@
+This is for the user public to view content from the server
+This is test and this is a static file
+Do not keep any sensitive file which can cause security breach (sensitive data leak of admin)
