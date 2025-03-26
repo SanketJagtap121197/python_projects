@@ -17,6 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include  # include also imported explicitly
 
+# Modified admin page 
+admin.site.site_header = "Sanket's Ice-Creams Admin"
+admin.site.site_title = "Sanket's Ice-Creams Admin Portal"
+admin.site.index_title = "Welcome to Sanket's Ice-Creams"
+
 urlpatterns = [
     path('admin/', admin.site.urls),  # This is the default URL configuration for the Django admin site.(Main hello page)
     path('', include('home.urls'))  # This is the URL configuration for the home app, we made explicitly. (If this path matches then send the request to home.urls)
